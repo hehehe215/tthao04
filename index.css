@@ -1,0 +1,86 @@
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background: rgba(0, 0, 0, 0.851);
+  }
+  .box {
+	position: relative;
+	height: calc(100% - 60px); /* Chiều cao canvas chính trừ chiều cao của sóng nhịp tim */
+  }
+  canvas#pinkboard {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  }
+  .heartbeat-wave {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px; /* Chiều cao của phần vẽ sóng nhịp tim */
+	background: rgba(0, 0, 0, 0); /* Chỉ cần không có nền để nhìn thấy canvas */
+  }
+#pinkboard {
+	position: relative;
+	margin: auto;
+	height: 750px;
+	width: 750px;
+	animation: animate 1.2s infinite;
+}
+
+#pinkboard:before, #pinkboard:after {
+	content: '';
+	position: absolute;
+	background: #d63031;
+	width: 100px;
+	height: 160px;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+
+#pinkboard:before {
+	left: 100px;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+				0 10px 10px rgba(0,0,0,0.22);
+}
+
+#pinkboard:after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+}
+
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px; /* Khoảng cách giữa các phần tử */
+	color: white;
+	margin-bottom: 400px; /* Khoảng cách từ đáy trang đến phần tử */
+  }
+  .text {
+	font-size: 24px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	margin: 0;
+  }
+  .heart-left {
+	background-image: url('traitim.jpg'); /* Đường dẫn đến hình ảnh trái tim bên trái */
+  }
+  .heart-right {
+	background-image: url('traitim.jpg'); /* Đường dẫn đến hình ảnh trái tim bên phải */
+  }
+  .heart {
+	width: 24px; /* Kích thước của trái tim bằng kích thước của chữ */
+	height: 24px;
+	background-size: contain; /* Đảm bảo hình ảnh vừa với phần tử */
+	background-repeat: no-repeat;
+  }
